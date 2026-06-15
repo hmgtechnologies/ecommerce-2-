@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HMG StoreForge v9 — E-Commerce Store Generator</title>
+<meta name="description" content="HMG StoreForge by HMG Technologies — generate a ready-to-deploy online store for any client in minutes. Built for Nigerian businesses.">
+<link rel="icon" href="assets/images/storeforge-logo.png">
+<link rel="stylesheet" href="assets/css/generator.css">
+<!-- PWA: make the generator installable on phone/laptop/desktop -->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0f2a4a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="assets/images/storeforge-logo.png">
+<script src="assets/js/brand.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="gen-header">
+  <div class="gen-container hdr-inner">
+    <div class="logo">
+      <img src="assets/images/storeforge-logo.png" alt="HMG StoreForge" onerror="this.style.display='none'">
+      <div><strong>HMG StoreForge <span style="background:var(--accent);color:#1b1300;font-size:.6rem;padding:.1rem .4rem;border-radius:5px;vertical-align:middle">v9</span></strong><small>by HMG Technologies</small></div>
+    </div>
+    <button class="wa-cta" id="installBtn" hidden style="background:var(--accent);color:#1b1300;border:none;cursor:pointer">⬇️ Install app</button>
+    <a class="wa-cta" id="hdrWa" target="_blank">💬 Need help?</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="gen-hero">
+  <div class="gen-container">
+    <span class="pill">⚡ Free · No AI API · Nigerian-built · v9 Enterprise</span>
+    <h1>Generate a Complete Online Store in Minutes</h1>
+    <p>Enter your client's details below. StoreForge v9 produces a ready-to-deploy e-commerce website —
+       catalog, cart, WhatsApp ordering, payments, wishlist, reviews, coupons, delivery zones, order
+       tracking, PWA, bulk CSV, and a sales dashboard — that you upload to GitHub. Every store is branded
+       "Powered by HMG StoreForge" for ongoing lead generation.</p>
+  </div>
+</section>
+
+<!-- GENERATOR FORM -->
+<main class="gen-container">
+<form id="genForm" class="gen-grid">
+
+  <!-- LEFT: form -->
+  <div class="form-col">
+
+    <fieldset class="card">
+      <legend>1️⃣ Store Identity</legend>
+      <div class="f"><label>Store name *</label><input name="storeName" required placeholder="e.g. Bella's Fashion Hub"></div>
+      <div class="f"><label>Tagline / slogan</label><input name="tagline" placeholder="Quality fashion at honest prices"></div>
+      <div class="f"><label>About the business</label><textarea name="about" rows="3" placeholder="Tell customers who you are..."></textarea></div>
+      <div class="row">
+        <div class="f"><label>City / Location</label><input name="location" placeholder="Lagos, Nigeria" value="Nigeria"></div>
+        <div class="f"><label>Store ID (slug) *</label><input name="storeId" required placeholder="bellas-fashion" pattern="[a-z0-9-]+"><small>lowercase, dashes only</small></div>
+      </div>
+      <div class="f"><label>Top announcement bar</label><input name="announcement" placeholder="🎉 Free delivery above ₦50,000!"></div>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>2️⃣ Contact Details</legend>
+      <div class="row">
+        <div class="f"><label>WhatsApp number * <small>(intl, no +)</small></label><input name="whatsapp" required placeholder="2348012345678"></div>
+        <div class="f"><label>Phone (display)</label><input name="phoneDisplay" placeholder="+234 801 234 5678"></div>
+      </div>
+      <div class="f"><label>Email</label><input type="email" name="email" placeholder="owner@store.com"></div>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>3️⃣ Social Media (optional)</legend>
+      <div class="row">
+        <div class="f"><label>Instagram URL</label><input name="instagram" placeholder="https://instagram.com/..."></div>
+        <div class="f"><label>Facebook URL</label><input name="facebook" placeholder="https://facebook.com/..."></div>
+      </div>
+      <div class="row">
+        <div class="f"><label>TikTok URL</label><input name="tiktok" placeholder="https://tiktok.com/@..."></div>
+        <div class="f"><label>YouTube URL</label><input name="youtube" placeholder="https://youtube.com/@..."></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>4️⃣ Brand Colours</legend>
+      <p class="muted">Quick presets, or pick your own below.</p>
+      <div class="preset-row" id="colorPresets"></div>
+      <div class="row">
+        <div class="f"><label>Primary</label><input type="color" name="primary" value="#0f2a4a"></div>
+        <div class="f"><label>Accent</label><input type="color" name="accent" value="#c9a227"></div>
+        <div class="f"><label>Secondary</label><input type="color" name="accent2" value="#14857c"></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="card studio">
+      <legend>🎨 Customization Studio <small>(v9 — design the client's look)</small></legend>
+      <div class="row">
+        <div class="f"><label>Body font</label>
+          <select name="font">
+            <option value="system">System (fast)</option><option value="inter">Inter</option>
+            <option value="poppins">Poppins</option><option value="montserrat">Montserrat</option>
+            <option value="nunito">Nunito</option><option value="lora">Lora (serif)</option>
+            <option value="playfair">Playfair (serif)</option><option value="spacegrotesk">Space Grotesk</option>
+          </select></div>
+        <div class="f"><label>Heading font</label>
+          <select name="headingFont">
+            <option value="system">Same as body</option><option value="inter">Inter</option>
+            <option value="poppins">Poppins</option><option value="montserrat">Montserrat</option>
+            <option value="nunito">Nunito</option><option value="lora">Lora (serif)</option>
+            <option value="playfair">Playfair (serif)</option><option value="spacegrotesk">Space Grotesk</option>
+          </select></div>
+      </div>
+      <div class="row">
+        <div class="f"><label>Layout</label>
+          <select name="layout"><option value="classic">Classic</option><option value="grid">Compact grid</option>
+            <option value="magazine">Magazine (big featured)</option><option value="minimal">Minimal</option></select></div>
+        <div class="f"><label>Hero style</label>
+          <select name="hero"><option value="split">Split (image + text)</option><option value="banner">Full banner</option>
+            <option value="centered">Centered</option><option value="none">No hero</option></select></div>
+      </div>
+      <div class="row">
+        <div class="f"><label>Product card style</label>
+          <select name="cardStyle"><option value="shadow">Shadow</option><option value="border">Bordered</option>
+            <option value="flat">Flat</option><option value="overlay">Image overlay</option></select></div>
+        <div class="f"><label>UI style</label>
+          <select name="uiStyle"><option value="standard">Standard</option><option value="glass">Glassmorphism</option>
+            <option value="neumorph">Neumorphism</option><option value="bold">Bold/Brutalist</option></select></div>
+      </div>
+      <div class="row">
+        <div class="f"><label>Corner roundness</label>
+          <select name="radius"><option value="sharp">Sharp</option><option value="soft" selected>Soft</option>
+            <option value="rounded">Rounded</option><option value="pill">Pill</option></select></div>
+        <div class="f"><label>Button shape</label>
+          <select name="buttonShape"><option value="square">Square</option><option value="rounded" selected>Rounded</option>
+            <option value="pill">Pill</option></select></div>
+      </div>
+      <div class="row">
+        <div class="f"><label>Spacing density</label>
+          <select name="density"><option value="compact">Compact</option><option value="cozy" selected>Cozy</option>
+            <option value="spacious">Spacious</option></select></div>
+        <div class="f"><label class="chk" style="margin-top:1.7rem"><input type="checkbox" name="darkDefault"> 🌙 Start in dark mode</label></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>✅ Feature Selection <small>(v9 — tick what the client needs)</small></legend>
+      <div class="feat-grid">
+        <label class="chk"><input type="checkbox" name="feat_wishlist" checked> ❤️ Wishlist</label>
+        <label class="chk"><input type="checkbox" name="feat_reviews" checked> ⭐ Reviews</label>
+        <label class="chk"><input type="checkbox" name="feat_qa" checked> ❓ Product Q&amp;A</label>
+        <label class="chk"><input type="checkbox" name="feat_testimonials" checked> 💬 Testimonials</label>
+        <label class="chk"><input type="checkbox" name="feat_faq" checked> ❓ FAQ</label>
+        <label class="chk"><input type="checkbox" name="feat_newsletter" checked> 📬 Newsletter</label>
+        <label class="chk"><input type="checkbox" name="feat_recent" checked> 👀 Recently viewed</label>
+        <label class="chk"><input type="checkbox" name="feat_trust" checked> 🛡️ Trust badges</label>
+        <label class="chk"><input type="checkbox" name="feat_dark" checked> 🌙 Dark-mode toggle</label>
+        <label class="chk"><input type="checkbox" name="feat_loyalty" checked> ⭐ Loyalty points</label>
+        <label class="chk"><input type="checkbox" name="feat_accounts" checked> 👤 Buyer accounts</label>
+        <label class="chk"><input type="checkbox" name="feat_notif" checked> 🔔 Notifications</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>5️⃣ Payments</legend>
+      <label class="chk"><input type="checkbox" name="manualEnabled" checked> 🏦 Enable Bank Transfer</label>
+      <div class="row indent">
+        <div class="f"><label>Bank</label><input name="bank" placeholder="GTBank"></div>
+        <div class="f"><label>Account number</label><input name="accountNumber" placeholder="0123456789"></div>
+      </div>
+      <div class="f indent"><label>Account name</label><input name="accountName" placeholder="Bella Fashion Ltd"></div>
+      <label class="chk"><input type="checkbox" name="gatewayEnabled"> 💳 Enable Online Payment</label>
+      <div class="row indent">
+        <div class="f"><label>Provider</label><select name="provider"><option>Paystack</option><option>Flutterwave</option></select></div>
+        <div class="f"><label>Payment link</label><input name="paymentLink" placeholder="https://paystack.com/pay/..."></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>6️⃣ Data Backend</legend>
+      <p class="muted">Leave blank to use the free JSON catalog (edit via Admin panel). Fill in for live Supabase mode.</p>
+      <div class="f"><label>Supabase URL</label><input name="supabaseUrl" placeholder="https://xxxx.supabase.co"></div>
+      <div class="f"><label>Supabase anon key</label><input name="supabaseKey" placeholder="eyJhbGci..."></div>
+      <div class="f"><label>Admin passcode (for admin.html)</label><input name="adminPass" value="admin1234"></div>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>7️⃣ Delivery & Discounts <small>(v3, optional)</small></legend>
+      <div class="f">
+        <label>Free delivery above (₦)</label>
+        <input name="freeAbove" type="number" placeholder="50000">
+      </div>
+      <div class="f">
+        <label>Delivery zones <small>— format: <code>Name:fee, Name:fee</code></small></label>
+        <input name="zones" placeholder="Lagos Mainland:1500, Lagos Island:2500, Outside Lagos:4000">
+      </div>
+      <div class="f">
+        <label>Coupon codes <small>— format: <code>CODE:percent:10, CODE2:fixed:2000</code></small></label>
+        <input name="coupons" placeholder="WELCOME10:percent:10, SAVE2000:fixed:2000">
+      </div>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>8️⃣ Marketing & Analytics <small>(v3, optional)</small></legend>
+      <div class="f">
+        <label>Formspree ID <small>(free newsletter capture — formspree.io)</small></label>
+        <input name="formspreeId" placeholder="xayzabcd">
+      </div>
+      <div class="row">
+        <div class="f"><label>Cloudflare Analytics token</label><input name="cloudflareToken" placeholder="(free, optional)"></div>
+        <div class="f"><label>Google Analytics ID</label><input name="googleId" placeholder="G-XXXXXXX"></div>
+      </div>
+      <label class="chk"><input type="checkbox" name="recoveryEnabled"> 💌 Enable abandoned-cart email recovery (free Formspree)</label>
+      <div class="row indent">
+        <div class="f"><label>Recovery Formspree ID</label><input name="recoveryFormspree" placeholder="(can reuse the one above)"></div>
+        <div class="f"><label>Recovery coupon code</label><input name="recoveryCoupon" placeholder="COMEBACK10"></div>
+      </div>
+      <p class="muted">All optional. Nothing loads if blank — keeping the store fast and free.</p>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>9️⃣ Orders, Loyalty &amp; Engagement <small>(v4, optional)</small></legend>
+      <div class="f">
+        <label>Google Sheets order URL <small>(free — see integrations/GOOGLE-SHEETS-SETUP.md)</small></label>
+        <input name="sheetsWebAppUrl" placeholder="https://script.google.com/macros/s/XXXX/exec">
+        <small>Logs every order into a Google Sheet automatically. No API key.</small>
+      </div>
+      <div class="row">
+        <div class="f"><label>Estimated delivery (days)</label><input name="estimatedDays" type="number" placeholder="3"></div>
+        <div class="f"><label>Flash sale title</label><input name="flashTitle" placeholder="Flash Sale — 20% off!"></div>
+      </div>
+      <div class="f"><label>Flash sale ends at <small>(date/time)</small></label><input name="flashEndsAt" type="datetime-local"></div>
+      <div class="f"><label>Returns policy</label><textarea name="returnsPolicy" rows="2" placeholder="We accept returns within 48 hours..."></textarea></div>
+      <label class="chk"><input type="checkbox" name="loyaltyEnabled"> ⭐ Enable loyalty points</label>
+      <label class="chk"><input type="checkbox" name="socialProofEnabled"> 🛍️ Enable "recently sold" notifications</label>
+      <label class="chk"><input type="checkbox" name="languagesEnabled" checked> 🌍 Enable multi-language (English, Pidgin, Hausa, Yoruba, Igbo)</label>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>🔟 Marketplace &amp; Rewards <small>(v5, optional)</small></legend>
+      <label class="chk"><input type="checkbox" name="marketplaceEnabled"> 🏪 Enable multi-vendor marketplace mode</label>
+      <div class="f indent">
+        <label>Vendors <small>— format: <code>Name|whatsapp|location; Name|whatsapp|location</code></small></label>
+        <textarea name="vendors" rows="3" placeholder="Bella Fashion|2348011111111|Lagos; Tech Hub|2348022222222|Abuja"></textarea>
+        <small>Then set each product's <code>vendor</code> to v1, v2… in products.json / admin.</small>
+      </div>
+      <div class="f">
+        <label>Gift card codes <small>— format: <code>CODE:value, CODE2:value</code></small></label>
+        <input name="giftCards" placeholder="GIFT5000:5000, GIFT2000:2000">
+      </div>
+      <label class="chk"><input type="checkbox" name="referralEnabled"> 🎁 Enable referral / refer-a-friend program</label>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>1️⃣1️⃣ Vendor, Dispatch &amp; Notifications <small>(v6, optional)</small></legend>
+      <label class="chk"><input type="checkbox" name="notificationsEnabled"> 🔔 Enable browser push notifications (free)</label>
+      <div class="f"><label>Monthly sales target (₦) <small>(0 = off)</small></label><input name="salesTarget" type="number" placeholder="500000"></div>
+      <div class="f">
+        <label>Delivery riders <small>— format: <code>Name|phone; Name|phone</code></small></label>
+        <textarea name="riders" rows="2" placeholder="Musa (Bike)|2348011111111; Grace (Van)|2348022222222"></textarea>
+        <small>Used by <code>dispatch.html</code> to assign orders to riders via WhatsApp.</small>
+      </div>
+      <div class="f"><label>Dispatch passcode (for dispatch.html)</label><input name="dispatchPass" value="dispatch123"></div>
+      <p class="muted">Vendors manage their own products at <code>vendor.html</code> using their vendor code (v1, v2…).</p>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend>1️⃣2️⃣ Accounts, Subscriptions &amp; Payouts <small>(v7, optional)</small></legend>
+      <label class="chk"><input type="checkbox" name="accountsEnabled" checked> 👤 Enable buyer accounts &amp; saved addresses</label>
+      <label class="chk"><input type="checkbox" name="subscriptionsEnabled" checked> 🔁 Enable subscriptions / recurring-order reminders</label>
+      <div class="f"><label>Marketplace commission % <small>(for ledger.html payout calc)</small></label><input name="commissionPercent" type="number" placeholder="8"></div>
+      <p class="muted">The payout ledger lives at <code>ledger.html</code>. Buyers &amp; generated stores are
+        installable as apps (PWA). This generator itself is installable too — look for "⬇️ Install app".</p>
+    </fieldset>
+
+    <button type="button" class="btn-big" id="generateBtn">⚙️ Generate Store Files (ZIP)</button>
+    <p class="muted center" id="status"></p>
+
+    <!-- v3: Direct GitHub deployment -->
+    <fieldset class="card" style="border:2px dashed var(--accent);margin-top:1.4rem">
+      <legend>🚀 One-Click Deploy to GitHub <small>(v3, optional)</small></legend>
+      <p class="muted">Skip manual uploads. Paste a GitHub token and StoreForge will create the repo,
+        push every file, and enable GitHub Pages — all from your browser. Free.</p>
+      <div class="f">
+        <label>GitHub Personal Access Token</label>
+        <input type="password" name="ghToken" id="ghToken" placeholder="ghp_xxx or github_pat_xxx">
+        <small>Create at github.com → Settings → Developer settings → Tokens. Needs <code>repo</code> scope.
+          The token stays in your browser only.</small>
+      </div>
+      <label class="chk"><input type="checkbox" id="ghPrivate"> Make repository private</label>
+      <button type="button" class="btn-big" id="deployBtn" style="background:var(--accent2);color:#fff;margin-top:.6rem">🚀 Generate &amp; Deploy to GitHub</button>
+      <div id="deployLog" class="deploy-log" hidden></div>
+    </fieldset>
+  </div>
+
+  <!-- RIGHT: live preview + lead-gen sidebar -->
+  <aside class="preview-col">
+    <div class="card sticky">
+      <h3>👁️ Live Preview</h3>
+      <div class="mini-store" id="miniPreview">
+        <div class="ms-bar" id="msBar">Your Store</div>
+        <div class="ms-hero" id="msHero">
+          <h4 id="msName">Store Name</h4>
+          <p id="msTag">Your tagline appears here</p>
+        </div>
+        <div class="ms-grid">
+          <div class="ms-card"><div class="ms-img"></div><span>Product</span><b id="msAccent1">₦5,000</b></div>
+          <div class="ms-card"><div class="ms-img"></div><span>Product</span><b id="msAccent2">₦8,000</b></div>
+        </div>
+        <div id="msStyleTag"></div>
+        <div class="ms-foot">⚡ Powered by HMG StoreForge v9</div>
+      </div>
+    </div>
+
+    <div class="card hmg-card">
+      <h3>🏢 HMG StoreForge</h3>
+      <p class="muted">Every store you generate carries your HMG brand & WhatsApp — a permanent lead-generation footer linking back to you.</p>
+      <ul class="hmg-list" id="hmgLinks"></ul>
+      <a class="btn-wa" id="sideWa" target="_blank">💬 Chat with HMG on WhatsApp</a>
+      <a class="btn-wa" href="../demo-store/index.html" target="_blank" style="background:var(--accent);color:#1b1300;margin-top:.5rem">👁️ View a Live Demo Store</a>
+    </div>
+  </aside>
+
+</form>
+</main>
+
+<footer class="gen-footer">
+  <div class="gen-container">
+    <p><strong>HMG StoreForge</strong> — a product of <a id="footTech" target="_blank">HMG Technologies</a>, subsidiary of HMG Concepts.</p>
+    <p class="muted">Created by Adewale Samson Adeagbo · Lagos, Nigeria · His Marvellous Grace</p>
+    <div class="foot-links" id="footLinks"></div>
+  </div>
+</footer>
+
+<!-- JSZip for building the downloadable store (CDN; falls back to manual download if blocked) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="assets/js/templates.js"></script>
+<script src="assets/js/github-deploy.js"></script>
+<script src="assets/js/generator.js"></script>
+<!-- PWA: register service worker + install prompt -->
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+  }
+  let deferredPrompt;
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault(); deferredPrompt = e;
+    const b = document.getElementById("installBtn"); if (b) b.hidden = false;
+  });
+  document.getElementById("installBtn")?.addEventListener("click", async () => {
+    if (!deferredPrompt) { alert("To install: use your browser menu → 'Install app' / 'Add to Home screen'."); return; }
+    deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt = null;
+    document.getElementById("installBtn").hidden = true;
+  });
+  window.addEventListener("appinstalled", () => { const b = document.getElementById("installBtn"); if (b) b.hidden = true; });
+</script>
+</body>
+</html>
