@@ -1,0 +1,237 @@
+{
+  "storeId": "bellas-fashion",
+  "storeName": "Bella's Fashion Hub",
+  "tagline": "Quality fashion at honest prices.",
+  "about": "Bella's Fashion Hub brings you the latest styles with reliable delivery nationwide.",
+  "location": "Lagos, Nigeria",
+  "announcement": "🎉 Free delivery on orders above ₦50,000!",
+  "whatsapp": "2348012345678",
+  "phoneDisplay": "+234 801 234 5678",
+  "email": "hello@bellasfashion.com",
+  "social": {
+    "instagram": "https://instagram.com/bellasfashion",
+    "facebook": "",
+    "tiktok": "",
+    "youtube": ""
+  },
+  "theme": {
+    "primary": "#0f2a4a",
+    "accent": "#c9a227",
+    "accent2": "#14857c"
+  },
+  "payments": {
+    "manual": {
+      "enabled": true,
+      "bank": "GTBank",
+      "accountNumber": "0123456789",
+      "accountName": "Bella Fashion Ltd"
+    },
+    "gateway": {
+      "enabled": false,
+      "provider": "Paystack",
+      "paymentLink": ""
+    }
+  },
+  "supabase": {
+    "url": "",
+    "anonKey": ""
+  },
+  "adminPass": "admin1234",
+  "coupons": [
+    {
+      "code": "WELCOME10",
+      "type": "percent",
+      "value": 10,
+      "minTotal": 0
+    }
+  ],
+  "delivery": {
+    "freeAbove": 50000,
+    "zones": [
+      {
+        "name": "Lagos Mainland",
+        "fee": 1500
+      },
+      {
+        "name": "Lagos Island",
+        "fee": 2500
+      },
+      {
+        "name": "Outside Lagos",
+        "fee": 4000
+      }
+    ]
+  },
+  "newsletter": {
+    "formspreeId": ""
+  },
+  "analytics": {
+    "cloudflareToken": "",
+    "googleId": ""
+  },
+  "hours": {
+    "enabled": true,
+    "timezone": "Africa/Lagos",
+    "schedule": {
+      "mon": [
+        "08:00",
+        "20:00"
+      ],
+      "tue": [
+        "08:00",
+        "20:00"
+      ],
+      "wed": [
+        "08:00",
+        "20:00"
+      ],
+      "thu": [
+        "08:00",
+        "20:00"
+      ],
+      "fri": [
+        "08:00",
+        "21:00"
+      ],
+      "sat": [
+        "09:00",
+        "21:00"
+      ],
+      "sun": [
+        "12:00",
+        "18:00"
+      ]
+    }
+  },
+  "faq": [
+    {
+      "q": "How do I place an order?",
+      "a": "Add items to cart, checkout, choose a payment method — your order reaches us on WhatsApp."
+    },
+    {
+      "q": "What are the delivery fees?",
+      "a": "Fees depend on your zone. Free delivery above the threshold set by the store."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Happy Customer",
+      "text": "Great service and fast delivery!",
+      "rating": 5
+    }
+  ],
+  "currencies": {
+    "base": "NGN",
+    "rates": {
+      "NGN": 1,
+      "USD": 0.00067,
+      "GBP": 0.00053
+    },
+    "symbols": {
+      "NGN": "₦",
+      "USD": "$",
+      "GBP": "£"
+    }
+  },
+  "returnsPolicy": "We accept returns within 48 hours of delivery for unused items in original packaging. Contact us on WhatsApp to start a return.",
+  "orders": {
+    "sheetsWebAppUrl": "",
+    "alsoEmailFormspreeId": ""
+  },
+  "loyalty": {
+    "enabled": false,
+    "pointsPerNaira": 0.001
+  },
+  "flashSale": {
+    "enabled": false,
+    "title": "Flash Sale!",
+    "endsAt": ""
+  },
+  "socialProof": {
+    "enabled": false
+  },
+  "trustBadges": [],
+  "languages": {
+    "enabled": true,
+    "default": "en",
+    "list": [
+      "en",
+      "pcm",
+      "ha",
+      "yo",
+      "ig"
+    ]
+  },
+  "marketplace": {
+    "enabled": false,
+    "commissionPercent": 0,
+    "vendors": []
+  },
+  "giftCards": [],
+  "referral": {
+    "enabled": false,
+    "rewardText": "Share your link — earn store credit when friends buy!"
+  },
+  "notifications": {
+    "enabled": false
+  },
+  "qr": {
+    "enabled": true
+  },
+  "salesTarget": {
+    "enabled": false,
+    "monthly": 0
+  },
+  "dispatch": {
+    "riders": []
+  },
+  "dispatchPass": "dispatch123",
+  "accounts": {
+    "enabled": true
+  },
+  "subscriptions": {
+    "enabled": true
+  },
+  "ledger": {
+    "commissionPercent": 8
+  },
+  "design": {
+    "font": "system",
+    "headingFont": "system",
+    "layout": "classic",
+    "hero": "split",
+    "cardStyle": "shadow",
+    "uiStyle": "standard",
+    "radius": "soft",
+    "buttonShape": "rounded",
+    "density": "cozy",
+    "darkDefault": false
+  },
+  "features": {
+    "search": true,
+    "categories": true,
+    "wishlist": true,
+    "reviews": true,
+    "qa": true,
+    "testimonials": true,
+    "faq": true,
+    "vendors": true,
+    "newsletter": true,
+    "recentlyViewed": true,
+    "trustBadges": true,
+    "about": true,
+    "contact": true,
+    "darkMode": true,
+    "languages": true,
+    "loyalty": true,
+    "accounts": true,
+    "notifications": true
+  },
+  "recovery": {
+    "enabled": false,
+    "formspreeId": "",
+    "delayMinutes": 60,
+    "coupon": "COMEBACK10",
+    "couponHint": "a discount"
+  }
+}
