@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HMG StoreForge v9 — E-Commerce Store Generator | HMG Technologies</title>
+<meta name="description" content="HMG StoreForge by HMG Technologies — generate complete, installable, SEO-ready online stores for Nigerian businesses. Open the generator, view a live demo, or read the docs." />
+<meta name="robots" content="index, follow" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="HMG StoreForge — E-Commerce Store Generator" />
+<meta property="og:description" content="We build online stores for Nigerian businesses. Sell like Jumia, Jiji & Konga — but yours." />
+<meta property="og:image" content="generator/assets/images/storeforge-logo.png" />
+<link rel="icon" href="generator/assets/images/storeforge-logo.png" />
+<meta name="theme-color" content="#0f2a4a" />
+<style>
+  :root{--navy:#0a1929;--navy2:#0f2a4a;--blue:#1e90ff;--blue2:#7cc3ff;--gold:#c9a227;--teal:#14857c;
+        --white:#f4f8fd;--muted:#9fb0c4;--card:#13202f;--border:#22344a;--radius:16px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--navy);
+       color:var(--white);line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  /* Header */
+  header{position:sticky;top:0;z-index:30;background:rgba(10,25,41,.92);backdrop-filter:blur(8px);
+         border-bottom:1px solid var(--border)}
+  .hdr{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+  .logo{display:flex;align-items:center;gap:.6rem;font-weight:800}
+  .logo img{height:42px;border-radius:8px;background:#fff;padding:3px}
+  .logo small{display:block;color:var(--muted);font-size:.72rem;font-weight:500}
+  .nav{display:flex;gap:1.2rem;font-size:.92rem}
+  .nav a{color:var(--muted)} .nav a:hover{color:var(--white)}
+  .wa{background:#25D366;color:#fff;padding:.55rem 1rem;border-radius:10px;font-weight:600;font-size:.88rem}
+  /* Hero */
+  .hero{background:radial-gradient(circle at 50% 0%,#163a63,var(--navy) 70%);padding:64px 0 48px;text-align:center}
+  .pill{display:inline-block;background:rgba(30,144,255,.15);border:1px solid var(--blue);
+        color:var(--blue2);padding:.35rem .9rem;border-radius:999px;font-size:.82rem;font-weight:600}
+  .hero h1{font-size:2.9rem;line-height:1.1;margin:1rem 0;letter-spacing:-.5px}
+  .hero h1 .g{color:var(--gold)}
+  .hero p.sub{font-size:1.18rem;color:#cfe0f5;max-width:60ch;margin:0 auto 1.6rem}
+  .cta-row{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.7rem;border-radius:12px;
+       font-weight:700;font-size:1rem;border:2px solid transparent;transition:.18s}
+  .btn-primary{background:var(--gold);color:#1b1300}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-outline{border-color:var(--blue);color:var(--white)}
+  .btn-outline:hover{background:rgba(30,144,255,.12)}
+  .trust{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem;color:var(--muted);font-size:.9rem}
+  /* Cards */
+  section{padding:54px 0}
+  h2.sec{font-size:2rem;text-align:center;margin-bottom:.4rem}
+  p.sec{text-align:center;color:var(--muted);margin-bottom:2rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;
+        display:flex;flex-direction:column}
+  .card .ico{font-size:2rem;margin-bottom:.6rem}
+  .card h3{font-size:1.25rem;margin-bottom:.4rem}
+  .card p{color:var(--muted);font-size:.95rem;flex:1;margin-bottom:1rem}
+  .card .btn{align-self:flex-start;padding:.7rem 1.2rem;font-size:.9rem}
+  .badge{display:inline-block;background:rgba(201,162,39,.15);color:var(--gold);font-size:.72rem;
+         font-weight:700;padding:.2rem .6rem;border-radius:6px;margin-bottom:.6rem;width:max-content}
+  /* Feature list */
+  .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.7rem}
+  .feat div{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;font-size:.92rem}
+  .feat .gold{color:var(--gold)}
+  /* HMG band */
+  .hmg{background:linear-gradient(135deg,var(--navy2),var(--teal));border-radius:var(--radius);padding:2rem;text-align:center;margin:1rem 0}
+  .hmg h3{font-size:1.5rem} .hmg p{color:#dcebff;color:#cfe7f5;margin:.5rem 0 1rem}
+  .links{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+  .links a{background:rgba(255,255,255,.1);padding:.5rem .9rem;border-radius:8px;font-size:.86rem}
+  .links a:hover{background:rgba(255,255,255,.2)}
+  /* Footer */
+  footer{background:#05101c;border-top:1px solid var(--border);padding:34px 0;text-align:center;color:var(--muted);font-size:.9rem}
+  footer .gold{color:var(--gold);font-weight:700}
+  footer a{color:var(--blue2)}
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+  .step{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;position:relative}
+  .step .n{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;
+           display:flex;align-items:center;justify-content:center;margin-bottom:.6rem}
+  @media(max-width:640px){.hero h1{font-size:2.1rem}.nav{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hdr">
+    <a class="logo" href="index.html">
+      <img src="generator/assets/images/storeforge-logo.png" alt="HMG StoreForge" onerror="this.style.display='none'">
+      <div><strong>HMG StoreForge</strong><small>by HMG Technologies</small></div>
+    </a>
+    <nav class="nav">
+      <a href="#start">Get Started</a>
+      <a href="demo-store/index.html">Live Demo</a>
+      <a href="#features">Features</a>
+      <a href="docs/DEPLOYMENT.md">Docs</a>
+    </nav>
+    <a class="wa" href="https://wa.me/2348100866322?text=Hi%20HMG%20Technologies!%20I%20want%20an%20online%20store." target="_blank" rel="noopener">💬 Chat us</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">⚡ Free tools · No AI API cost · Nigerian-built · v9</span>
+    <h1>We Build Your <span class="g">Online Store</span></h1>
+    <p class="sub">HMG StoreForge generates complete, installable, search-engine-ready e-commerce
+       websites for businesses — sell like Jumia, Jiji &amp; Konga, but it's yours.</p>
+    <div class="cta-row" id="start">
+      <a class="btn btn-primary" href="generator/index.html">⚙️ Open the Generator</a>
+      <a class="btn btn-outline" href="demo-store/index.html">👁️ View Live Demo Store</a>
+    </div>
+    <div class="trust">
+      <span>✅ Installable App (PWA)</span>
+      <span>🔎 Found on Google &amp; Bing</span>
+      <span>💬 WhatsApp Orders</span>
+      <span>🏪 Multi-Vendor Ready</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section>
+  <div class="wrap">
+    <h2 class="sec">What's Inside This Package</h2>
+    <p class="sec">Everything you need to launch online stores for your clients — 100% free tools.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">START HERE</span>
+        <div class="ico">⚙️</div>
+        <h3>The Generator</h3>
+        <p>Enter a client's details, pick their design (fonts, layout, colours, features), then download a
+           ready store ZIP — or one-click deploy to GitHub. Installable as an app.</p>
+        <a class="btn btn-primary" href="generator/index.html">Open Generator →</a>
+      </div>
+      <div class="card">
+        <span class="badge">SEE IT LIVE</span>
+        <div class="ico">🛍️</div>
+        <h3>Demo Store</h3>
+        <p>A fully-populated example marketplace ("Naija Mart") showing every feature: catalog, cart,
+           wishlist, reviews, coupons, vendors, 5 languages, and more.</p>
+        <a class="btn btn-outline" href="demo-store/index.html">View Demo →</a>
+      </div>
+      <div class="card">
+        <span class="badge">FOR CLIENTS</span>
+        <div class="ico">🎨</div>
+        <h3>Store Template</h3>
+        <p>The actual storefront each client receives — admin panel, vendor dashboard, dispatch, payout
+           ledger, order tracking, PWA install, SEO sitemap.</p>
+        <a class="btn btn-outline" href="store-template/index.html">Preview Template →</a>
+      </div>
+      <div class="card">
+        <span class="badge">LEARN</span>
+        <div class="ico">📚</div>
+        <h3>Documentation</h3>
+        <p>Step-by-step deployment, customization studio, SEO guide, install-as-app, payments,
+           Supabase, lead generation, troubleshooting, and full changelogs.</p>
+        <a class="btn btn-outline" href="docs/DEPLOYMENT.md">Read the Docs →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background:#0c1c30">
+  <div class="wrap">
+    <h2 class="sec">How It Works</h2>
+    <p class="sec">From client details to a live store in minutes.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Enter details</h3><p style="color:var(--muted)">Open the Generator, type the client's business info, pick design &amp; features.</p></div>
+      <div class="step"><div class="n">2</div><h3>Generate</h3><p style="color:var(--muted)">Download the store ZIP, or one-click deploy straight to GitHub Pages.</p></div>
+      <div class="step"><div class="n">3</div><h3>Deploy</h3><p style="color:var(--muted)">Host free on Cloudflare/GitHub Pages — live, installable &amp; searchable.</p></div>
+      <div class="step"><div class="n">4</div><h3>Client sells</h3><p style="color:var(--muted)">They add products, share the link, and receive orders on WhatsApp.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="wrap">
+    <h2 class="sec">Enterprise Features (All Free)</h2>
+    <p class="sec">Built up across v1–v9 — nothing removed, only enhanced.</p>
+    <div class="feat">
+      <div><span class="gold">🛒</span> Product catalog &amp; cart</div>
+      <div><span class="gold">💬</span> WhatsApp ordering</div>
+      <div><span class="gold">🔒</span> Bank transfer + Paystack</div>
+      <div><span class="gold">❤️</span> Wishlist &amp; reviews</div>
+      <div><span class="gold">🎟️</span> Coupons &amp; gift cards</div>
+      <div><span class="gold">🚚</span> Delivery zones &amp; dispatch</div>
+      <div><span class="gold">🏪</span> Multi-vendor marketplace</div>
+      <div><span class="gold">👤</span> Buyer accounts &amp; subscriptions</div>
+      <div><span class="gold">💰</span> Vendor payout ledger</div>
+      <div><span class="gold">📲</span> Installable app (PWA) + offline</div>
+      <div><span class="gold">🔎</span> SEO + sitemap (Google/Bing)</div>
+      <div><span class="gold">🌍</span> EN · Pidgin · Hausa · Yoruba · Igbo</div>
+      <div><span class="gold">📊</span> Google Sheets order logging</div>
+      <div><span class="gold">🎨</span> Customization studio</div>
+      <div><span class="gold">⭐</span> Loyalty, flash sales, social proof</div>
+      <div><span class="gold">🤖</span> WhatsApp auto-reply scaffold</div>
+    </div>
+    <p style="text-align:center;margin-top:1.4rem"><a class="btn btn-outline" href="docs/FEATURES.md">See all features in detail →</a></p>
+  </div>
+</section>
+
+<!-- HMG LEAD-GEN BAND -->
+<section>
+  <div class="wrap">
+    <div class="hmg">
+      <h3>Built by HMG Technologies</h3>
+      <p>Adewale Samson Adeagbo · Lagos, Nigeria · <em>His Marvellous Grace — Real problems. Real solutions.</em></p>
+      <a class="btn btn-primary" href="https://wa.me/2348100866322?text=Hi%20HMG%20Technologies!%20I%20want%20my%20own%20online%20store." target="_blank" rel="noopener">💬 Get Your Own Store on WhatsApp</a>
+      <div class="links">
+        <a href="https://hmgtechnologies.pages.dev" target="_blank" rel="noopener">💻 HMG Technologies</a>
+        <a href="https://hmgconcepts.pages.dev" target="_blank" rel="noopener">🌐 HMG Concepts</a>
+        <a href="https://hmgacademy.pages.dev" target="_blank" rel="noopener">🎓 HMG Academy</a>
+        <a href="https://hmgmedia.pages.dev" target="_blank" rel="noopener">📢 HMG Media</a>
+        <a href="https://hmggospel.pages.dev" target="_blank" rel="noopener">✝️ HMG Gospel</a>
+        <a href="https://cssadewale.pages.dev" target="_blank" rel="noopener">👤 Portfolio</a>
+        <a href="https://youtube.com/@hmgconcepts" target="_blank" rel="noopener">📺 YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="gold">HMG StoreForge v9 — a product of HMG Technologies</p>
+    <p style="margin:.5rem 0">
+      💬 WhatsApp <a href="https://wa.me/2348100866322" target="_blank" rel="noopener">+234 810 086 6322</a>
+      &nbsp;·&nbsp; ✉️ <a href="mailto:hmgconcepts@gmail.com">hmgconcepts@gmail.com</a>
+      &nbsp;·&nbsp; 🌐 <a href="https://hmgtechnologies.pages.dev" target="_blank" rel="noopener">hmgtechnologies.pages.dev</a>
+    </p>
+    <p style="color:#6b7d92">© <span id="yr"></span> HMG Technologies · Education · Technology · Media · Gospel</p>
+  </div>
+</footer>
+<script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Cloudflare Pages / Netlify-style redirects (optional)
+/generator   /generator/index.html   200
+/demo        /demo-store/index.html  200

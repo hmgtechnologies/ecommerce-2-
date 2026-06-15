@@ -70,6 +70,13 @@ Full documentation lives in [`docs/`](docs/).
 
 ---
 
+## 🏠 Start here: open `index.html`
+
+The package now includes a **root `index.html` landing page** — the platform's front door. Open it
+(or deploy the whole folder) and it links you to the **Generator**, the **live Demo store**, the
+**Store template**, and the **docs**, with HMG branding + WhatsApp for lead generation. Root-level
+`robots.txt`, `sitemap.xml` and `_redirects` are included so the package is deploy-ready at the root.
+
 ## ⚡ Quick Start (5 minutes)
 
 ### Option A — Browser, download ZIP (easiest, no install)
